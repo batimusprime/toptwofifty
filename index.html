@@ -1,0 +1,70 @@
+<!doctype HTML>
+<html>
+<head>
+
+<title>Top 250 Watcher</title>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+
+<!-- container for list -->
+<div id="maindiv"></div>
+
+
+<!-- import firebase -->
+<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBVFTFsSYBUOwwpuT_pdVju9anQomAuSFw",
+    authDomain: "imdbtop250watcher.firebaseapp.com",
+    databaseURL: "https://imdbtop250watcher.firebaseio.com",
+    projectId: "imdbtop250watcher",
+    storageBucket: "imdbtop250watcher.appspot.com",
+    messagingSenderId: "309049501518"
+};
+firebase.initializeApp(config);
+
+
+database = firebase.database();
+
+var ref = database.ref('movies');
+ref.on('value',gotData,errData);
+
+//Empty array
+var movielist = {}
+
+//Triggers function if data is received from ref
+function gotData(data){
+    var movies = data.val();
+    
+    //idk if this can be changed as it referenced key/pair values
+    var keys = Object.values(movies);
+    //incrementer
+    var i;
+    
+    //generic for loop
+    for (i = 0; i < keys.length; i++) { 
+        
+        //iterate through list adding to div
+        $("#maindiv").append("<li>"+keys[i] + "</li>");
+}
+}
+
+function errData(err){
+
+    console.log('Error: ' + err);
+}
+
+</script>
+
+</body>
+
+
+</html>
