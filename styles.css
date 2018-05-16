@@ -1,8 +1,15 @@
 body{
 
-text-align: center;
+text-align: left;
 text-decoration: none;
 list-style-type: none;
 
+font-family: 'Bitter', serif;
+font-size: 1.5rem;
 }
 
+
+#maindiv{
+    width: 80%;
+
+}
