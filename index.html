@@ -1,37 +1,23 @@
 <!doctype HTML>
-<html>
+<html lang = "en">
 <head>
 
-<title>Top 250 Watcher</title>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <title>IMDB Top 250 Watcher App</title>
+    
 </head>
 <body>
 
+<div id="contain">
 
-<!-- container for list -->
-<div id="maindiv"></div>
+<table id="main_table">
 
+</table>
 
-<!-- import firebase -->
-<script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
-<script>
-    var config = {
-    apiKey: "AIzaSyBVFTFsSYBUOwwpuT_pdVju9anQomAuSFw",
-    authDomain: "imdbtop250watcher.firebaseapp.com",
-    databaseURL: "https://imdbtop250watcher.firebaseio.com",
-    projectId: "imdbtop250watcher",
-    storageBucket: "imdbtop250watcher.appspot.com",
-    messagingSenderId: "309049501518"
-};
-firebase.initializeApp(config);</script>
-<script src="main.js"></script>
+</div>
 
 
 </body>

@@ -1,15 +1,24 @@
-body{
+#contain{
 
-text-align: left;
-text-decoration: none;
-list-style-type: none;
-
-font-family: 'Bitter', serif;
-font-size: 1.5rem;
+    display: flex;
 }
 
+#no{
 
-#maindiv{
-    width: 80%;
+    width: 50%;
+    border: 1px solid green;
+}
+#yes{
 
+    width: 50%;
+    border: 1px solid black;
+
+}
+
+.entry{
+    
+    list-style-type: none;
+    font-size: 1.5rem;
+    padding: .2rem;
+    
 }
