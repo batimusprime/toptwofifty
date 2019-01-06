@@ -1,27 +1,29 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+Author: github.com/batimusprime
+File: IMDB Top 250 Watcher / scrape.py
+Purpose: Scrape IMDB website, return top 250 movie list as organized structure
+Date: 1/5/2019
 
-# coding: utf-8
-
-# In[3]:
-
-
+"""
 from bs4 import BeautifulSoup
 
+#create empty list
+mov_list = []
 
-#import raw HTML from local file
-l = []
-soup = BeautifulSoup(open('source.html'), "html.parser")
+#create BS object
+soup = BeautifulSoup(open('source.html'), 'html.parser')
 
-td = soup.find_all('td')
-for t in td:
-    t.find_all('titleColumn')
-    oname = t.find_all('a')
-    for o in oname:
-        tex = o.text
-        #if len(tex)>1:
-        #    l.append(tex.splitlines())
-        if len(tex)>2:
-            l.append(tex)
-f= open("output.txt","w+")
-for i in l:
-    f.write(i + '\n')
+#parse object for list of TD elements with class titleColumn
+mov_list = soup.find_all('td', { 'class' : 'titleColumn' })
 
+#open file for writing            
+output_file= open('output.txt','w+')
+
+#iterate over list, selecting a elements, then text in between that element's tags
+for mov in mov_list:
+    output_file.write(mov.a.text +  ', ' + mov.span.text +  ', \n')
+    
+#close file
+output_file.close()
