@@ -1,10 +1,19 @@
-This is an app for watching the imdb top 250 movies
+This app scrapes the IMDB website and returns the top 250 movies as a checklist for watching
 
-# Data is obtained by saving https://www.imdb.com/chart/top as source.html
-# /app/scrape.py outputs a list as output.txt
-# Use IDE to format text as javascript file with singular array "movies"
-# iterate over array and display results on webpage
+scrape.py initially operates off of static "source.html"
 
+index.html lists static display of movies with non-functioning checkbox
+#IMDB has paginated / changed the source file
+#TO-DO:
+System flow documentation and charts
+Integrate cloud storage via Firebase
+Integrate method in which to mark movies as watched
+Integrate storage for individual users via Firebase Auth
+Host on firebase
 
-## For now manually change watched paramter in JS file to "y" for watched movies
-## Eventually click back and forth and save state with Firebase auth
+#Future Plans
+Include links to IMDB page
+Pre load / display preview on hover / side pane
+categorization / data sorting
+analytics / statistics
+
