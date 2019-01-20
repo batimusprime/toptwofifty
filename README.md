@@ -17,3 +17,4 @@ Pre load / display preview on hover / side pane
 categorization / data sorting
 analytics / statistics
 
+#Update: IMDB changes to website have broken this app. No plans to rework. Archived.
